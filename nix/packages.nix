@@ -5,7 +5,7 @@ let pkgs = {
     { }
   );
   atomi = (
-    with import (fetchTarball "https://github.com/kirinnee/test-nix-repo/archive/refs/tags/v7.0.0.tar.gz");
+    with import (fetchTarball "https://github.com/kirinnee/test-nix-repo/archive/refs/tags/v8.0.2.tar.gz");
     {
       inherit gitlint pls sg;
     }
