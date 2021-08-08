@@ -10,7 +10,7 @@ install() {
 		echo "✔ \"${name}\" found! ") ||
 		(echo "❌ \"${name}\" not found!" &&
 			echo "🚀 Installing \"${name}\"..." &&
-			nix-env -i "${binary}" >/dev/null 2>&1 &&
+			nix-env -i "${binary}" &&
 			echo "✔ \"${name}\" installed")
 
 }
