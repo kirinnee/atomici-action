@@ -7,8 +7,8 @@ on:
 jobs:
   precommit:
     name: Pre-Commit
-    container: ghcr.io/kirinnee/nix-ci/nix-ci:latest
     runs-on: ubuntu-20.04
+
     steps:
       - name: Use Cachix
         run: cachix use kirinnee-sample-binary-cache
