@@ -1,0 +1,21 @@
+name: AtomiCloud CI Environment
+description: "Setups AtomiCloud's CI environment Environment"
+inputs:
+  install_url:
+    description: "Installation URL that will contain a script to install Nix."
+  install_options:
+    description: "Additional installer flags passed to the installer script."
+  nix_path:
+    description: "Set NIX_PATH environment variable."
+  extra_nix_config:
+    description: "gets appended to `/etc/nix/nix.conf` if passed."
+runs:
+  using: "composite"
+  steps:
+    - name: Install Nix
+      run: ${{ github.action_path }}/scripts/install-nix.sh
+      shell: bash
+
+    - name: Install Dependent binaries with Nix
+      run: ${{ github.action_path }}/scripts/atomi.sh
+      shell: bash

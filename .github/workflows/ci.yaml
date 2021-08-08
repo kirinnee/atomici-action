@@ -1,0 +1,20 @@
+name: "Continous Integration"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  precommit:
+    name: Pre-Commit
+    container: ghcr.io/kirinnee/nix-ci/nix-ci:latest
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Use Cachix
+        run: cachix use kirinnee-sample-binary-cache
+
+      - name: Checkout Code
+        uses: actions/checkout@v2.3.4
+
+      - name: Run Pre-commit checks
+        run: nix-shell nix/shells.nix -A lint-ci --run scripts/ci/pre-commit.sh

@@ -1,0 +1,58 @@
+version: "3"
+
+tasks:
+  cfg:scripts:
+    desc: Make scripts executable
+    cmds:
+      - chmod -R +x ./scripts
+
+  isolate:
+    desc: Drop into a isolated environment with nix
+    cmds:
+      - ./scripts/isolate.sh
+
+  lint:
+    desc: Lints all important files
+    cmds:
+      - task: lint:sh
+
+  lint:sh:
+    desc: Lints shell scripts
+    cmds:
+      - shellcheck **/*.sh
+
+  fmt:
+    desc: Run all formatting supported.
+    summary: |
+      Runs all formatting supported.
+
+      1. Runs fmt:md, which formats all Markdown using prettier
+      2. Runs fmt:yaml, which formats all YAML using prettier
+      3. Runs fmt:nix, which formats all Nix files with nixpkgs-fmt
+      4. Runs fmt:sh. which formats all sh scripts
+    cmds:
+      - task: fmt:md
+      - task: fmt:yaml
+      - task: fmt:nix
+      - task: fmt:sh
+
+  fmt:sh:
+    desc: Formats shell scripts with shfmt
+    cmds:
+      - shfmt -w .
+  fmt:md:
+    desc: Formats Markdown with prettier
+    cmds:
+      - prettier -w "**/*.MD"
+      - prettier -w "**/*.md"
+
+  fmt:yaml:
+    desc: Formats YAML with prettier
+    cmds:
+      - prettier -w "**/*.yaml"
+      - prettier -w "**/*.yml"
+
+  fmt:nix:
+    desc: Formats Nix files
+    cmds:
+      - nixpkgs-fmt .

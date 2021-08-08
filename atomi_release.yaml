@@ -1,0 +1,151 @@
+gitlint: .gitlint
+
+conventionMarkdown:
+  path: CommitConventions.md
+  template: |
+    # Commit Conventions
+
+    var___convention_docs___
+keywords:
+  - BREAKING CHANGE
+  - BREAKING CHANGES
+  - BREAKING
+
+branches:
+  - main
+
+specialScopes:
+  no-release:
+    desc: Prevent release from happening
+    release: false
+
+plugins:
+  - module: "@semantic-release/changelog"
+    config:
+      changelogFile: Changelog.md
+  - module: "@semantic-release/exec"
+    config:
+      prepareCmd: prettier -w Changelog.md
+  - module: "@semantic-release/git"
+    config:
+      message: "release: ${nextRelease.version}\n\n${nextRelease.notes}"
+      assets:
+        - Changelog.md
+  - module: "@semantic-release/github"
+
+types:
+  - type: fix
+    section: Bug Fixes
+    desc: Fixes bug in repository
+    vae:
+      verb: fix
+      application: <title>
+      example: "fix: action wrongly retrieving env var"
+    scopes:
+      default:
+        desc: Generic fixes not under `action` or `config`
+        release: patch
+      action:
+        desc: Fixes in the GitHub action
+        release: patch
+      config:
+        desc: Fixes in configuration
+        release: false
+
+  - type: feat
+    section: Features
+    desc: Adds a new feature into the action
+    vae:
+      verb: add
+      application: <title> to the GitHub action
+      example: "feat: generators for random numbers"
+    scopes:
+      default:
+        desc: Adds a new feature into the GitHub action
+        release: minor
+
+  - type: remove
+    section: Removed
+    desc: Remove or deprecated features from the action
+    vae:
+      verb: remove
+      application: title
+      example: "remove: generators for random numbers"
+    scopes:
+      default:
+        desc: Removed or deprecated a features from the action
+        release: major
+
+  - type: docs
+    desc: Add documentation
+    section: Documentation Updates
+    vae:
+      verb: document
+      application: <title>
+      example: "docs(dev): how to setup dev environment"
+    scopes:
+      default:
+        desc: Adds a generic documentation not related to `dev` or `user`
+        release: false
+      user:
+        desc: Adds a user-side documentation
+        release: false
+      dev:
+        desc: Adds a developer-side (contributing) documentation
+        release: false
+
+  - type: ci
+    desc: Changed the CI pipeline
+    scopes:
+      default:
+        desc: Update CI configuration
+        release: false
+
+  - type: release
+    desc: Initiate a release (machine initiated)
+    scopes:
+      default:
+        desc: Machine initiated release
+        release: false
+
+  - type: config
+    desc: Update configuration of the repository
+    vae:
+      verb: configure
+      application: <title>
+      example: "config(lint): shellcheck to ignore SC2015 for run.sh"
+    scopes:
+      default:
+        desc: Updates the configuration of the repository, not related to the other scopes
+        release: false
+      lint:
+        desc: Add, update or remove linters
+        release: false
+      fmt:
+        desc: Add, updatge or remove formatters
+        release: false
+      build:
+        desc: Add, update or change build pipelines and generators
+        release: patch
+      env:
+        desc: Add, update or change environment
+        release: patch
+      ignore:
+        desc: Add, update or change ignore configurations
+        release: false
+  - type: refactor
+    desc: Refactor the action
+    vae:
+      verb: refactor
+      application: <title>
+      example: "refactor: install nix and cachix into a single faster step"
+    scopes:
+      default:
+        desc: Refactor the dockerfile
+        release: patch
+  - type: chore
+    desc: Any chores, uncategorized, or small mistakes (like typos)
+    scopes:
+      default:
+        desc: chores
+        release: false

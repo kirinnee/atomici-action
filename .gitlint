@@ -1,0 +1,6 @@
+[general]
+contrib=CT1
+ignore=B6
+
+[contrib-title-conventional-commits]
+types = chore,ci,config,docs,feat,fix,refactor,release,remove
