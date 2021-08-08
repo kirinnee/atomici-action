@@ -12,9 +12,6 @@ jobs:
       - name: AtomiCloud CI Environment
         uses: kirinnee/atomici-action@v1.2.1
 
-      - name: Check Nix PATH
-        run: echo $NIX_PATH
-
       - name: Use Cachix
         run: cachix use kirinnee-sample-binary-cache
 
