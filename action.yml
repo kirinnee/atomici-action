@@ -9,6 +9,8 @@ inputs:
     description: "Set NIX_PATH environment variable."
   extra_nix_config:
     description: "gets appended to `/etc/nix/nix.conf` if passed."
+  binary_cache:
+    description: "The list of binary caches to use separated by spaces"
 runs:
   using: "composite"
   steps:
@@ -24,3 +26,9 @@ runs:
     - name: Install Dependent binaries with Nix
       run: ${{ github.action_path }}/scripts/atomi.sh
       shell: bash
+
+    - name: Use Binary Caches
+      run: ${{ github.action_path }}/scripts/binary_cache.sh
+      shell: bash
+      env:
+        BINARY_CACHE: "${{ inputs.binary_cache }}"

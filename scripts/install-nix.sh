@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+[ "${INPUT_NIX_PATH}" = "" ] && INPUT_NIX_PATH="nixpkgs=channel:nixos-unstable"
+
+echo "NIX_PATH=${INPUT_NIX_PATH}" >>"$GITHUB_ENV"
+
 if type -p nix >/dev/null 2>&1; then
 	echo "Aborting: Nix is already installed at $(type -p nix)"
 	exit
@@ -51,7 +55,3 @@ fi
 # Set paths
 echo "/nix/var/nix/profiles/per-user/$USER/profile/bin" >>"$GITHUB_PATH"
 echo "/nix/var/nix/profiles/default/bin" >>"$GITHUB_PATH"
-
-[ "${INPUT_NIX_PATH}" = "" ] && INPUT_NIX_PATH="nixpkgs=channel:nixos-unstable"
-
-[ "${INPUT_NIX_PATH}" != "" ] && echo "NIX_PATH=${INPUT_NIX_PATH}" >>"$GITHUB_ENV"
