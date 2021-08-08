@@ -7,9 +7,19 @@ on:
 jobs:
   precommit:
     name: Pre-Commit
-    container: ghcr.io/kirinnee/nix-ci/nix-ci:latest
+    # container: ghcr.io/kirinnee/nix-ci/nix-ci:latest
     runs-on: ubuntu-20.04
     steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v13
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      - name: Install Cachix
+        run: |
+          echo $NIX_PATH
+          nix-env -i cachix
+
       - name: Use Cachix
         run: cachix use kirinnee-sample-binary-cache
 
