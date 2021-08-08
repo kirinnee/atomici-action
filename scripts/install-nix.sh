@@ -15,7 +15,7 @@ add_config "max-jobs = auto"
 # Allow binary caches for user
 add_config "trusted-users = root $USER"
 # Append extra nix configuration if provided
-if [[ $INPUT_EXTRA_NIX_CONFIG != "" ]]; then
+if [[ "${INPUT_EXTRA_NIX_CONFIG}" != "" ]]; then
 	add_config "$INPUT_EXTRA_NIX_CONFIG"
 fi
 
@@ -27,7 +27,7 @@ installer_options=(
 	--darwin-use-unencrypted-nix-store-volume
 	--nix-extra-conf-file /tmp/nix.conf
 )
-if [[ $INPUT_INSTALL_OPTIONS != "" ]]; then
+if [[ "${INPUT_INSTALL_OPTIONS}" != "" ]]; then
 	IFS=' ' read -r -a extra_installer_options <<<"${INPUT_INSTALL_OPTIONS}"
 	installer_options=("${extra_installer_options[@]}" "${installer_options[@]}")
 fi
@@ -53,6 +53,6 @@ fi
 echo "/nix/var/nix/profiles/per-user/$USER/profile/bin" >>"$GITHUB_PATH"
 echo "/nix/var/nix/profiles/default/bin" >>"$GITHUB_PATH"
 
-if [[ $INPUT_NIX_PATH != "" ]]; then
+if [[ "${INPUT_NIX_PATH}" != "" ]]; then
 	echo "NIX_PATH=${INPUT_NIX_PATH}" >>"$GITHUB_ENV"
 fi
