@@ -10,7 +10,7 @@ install() {
 		echo "✔ \"${name}\" found! ") ||
 		(echo "❌ \"${name}\" not found!" &&
 			echo "🚀 Installing \"${name}\"..." &&
-			nix-env -i "${binary}" &&
+			nix-env -iA "nixpkgs.${binary}" &&
 			echo "✔ \"${name}\" installed")
 
 }
