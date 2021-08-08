@@ -15,6 +15,11 @@ runs:
     - name: Install Nix
       run: ${{ github.action_path }}/scripts/install-nix.sh
       shell: bash
+      env:
+        INPUT_INSTALL_URL: "${{ inputs.install_url }}"
+        INPUT_INSTALL_OPTIONS: "${{ inputs.install_options }}"
+        INPUT_NIX_PATH: "${{ inputs.nix_path }}"
+        INPUT_EXTRA_NIX_CONFIG: "${{ inputs.extra_nix_config }}"
 
     - name: Install Dependent binaries with Nix
       run: ${{ github.action_path }}/scripts/atomi.sh
