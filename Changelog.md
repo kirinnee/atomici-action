@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/kirinnee/atomici-action/compare/v1.0.2...v1.1.0) (2021-08-08)
+
+### Features
+
+- use nixpkgs.<env> ([1d9bd0c](https://github.com/kirinnee/atomici-action/commit/1d9bd0cbcc3768d3395608345ffa8d72c1062a09))
+
 ### [1.0.2](https://github.com/kirinnee/atomici-action/compare/v1.0.1...v1.0.2) (2021-08-08)
 
 ### Bug Fixes
