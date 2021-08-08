@@ -3,7 +3,7 @@ set -euo pipefail
 
 [ "${INPUT_NIX_PATH}" = "" ] && INPUT_NIX_PATH="nixpkgs=channel:nixos-unstable"
 
-[ "${INPUT_NIX_PATH}" != "" ] && echo "NIX_PATH=${INPUT_NIX_PATH}" >>"$GITHUB_ENV"
+echo "NIX_PATH=${INPUT_NIX_PATH}" >>"$GITHUB_ENV"
 
 if type -p nix >/dev/null 2>&1; then
 	echo "Aborting: Nix is already installed at $(type -p nix)"
