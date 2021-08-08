@@ -1,3 +1,9 @@
+### [1.2.1](https://github.com/kirinnee/atomici-action/compare/v1.2.0...v1.2.1) (2021-08-08)
+
+### Bug Fixes
+
+- NIX PATH broken for usage ([d814d97](https://github.com/kirinnee/atomici-action/commit/d814d97b74d44e33364b06747db574a28f5d905f))
+
 ## [1.2.0](https://github.com/kirinnee/atomici-action/compare/v1.1.0...v1.2.0) (2021-08-08)
 
 ### Features
