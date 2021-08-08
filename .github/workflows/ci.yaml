@@ -16,7 +16,7 @@ jobs:
 
       - name: Use Cachix
         run: |
-          nix-env -i cachix
+          nix-env -i cachix -f '<nixpkgs>'
           cachix use kirinnee-sample-binary-cache
 
       - name: Checkout Code
