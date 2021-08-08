@@ -1,3 +1,9 @@
+### [1.0.2](https://github.com/kirinnee/atomici-action/compare/v1.0.1...v1.0.2) (2021-08-08)
+
+### Bug Fixes
+
+- **attempt:** nix not found ([aa71a6f](https://github.com/kirinnee/atomici-action/commit/aa71a6f4b3e600a91082c15de2d5aa1a91a658f6))
+
 ### [1.0.1](https://github.com/kirinnee/atomici-action/compare/v1.0.0...v1.0.1) (2021-08-08)
 
 ### Bug Fixes
