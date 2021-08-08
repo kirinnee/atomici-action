@@ -1,5 +1,7 @@
 #! /bin/sh
 
+echo NIX_PATH: "${NIX_PATH}"
+
 install() {
 	name="$1"
 	binary="$2"
