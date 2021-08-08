@@ -9,6 +9,9 @@ jobs:
     name: Pre-Commit
     runs-on: ubuntu-20.04
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2.3.4
+
       - name: AtomiCloud CI Environment
         run: |
           scripts/install-nix.sh
@@ -21,9 +24,6 @@ jobs:
 
       - name: Use Cachix
         run: cachix use kirinnee-sample-binary-cache
-
-      - name: Checkout Code
-        uses: actions/checkout@v2.3.4
 
       - name: Run Pre-commit checks
         run: nix-shell nix/shells.nix -A lint-ci --run scripts/ci/pre-commit.sh
