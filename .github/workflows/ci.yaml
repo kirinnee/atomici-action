@@ -18,7 +18,7 @@ jobs:
       - name: Install Cachix
         run: |
           echo $NIX_PATH
-          nix-env -i cachix =f '<nixpkgs>'
+          nix-env -i cachix -f '<nixpkgs>'
 
       - name: Use Cachix
         run: cachix use kirinnee-sample-binary-cache
