@@ -9,13 +9,12 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: AtomiCloud CI Environment
-        uses: kirinnee/atomici-action@v1.2.1
+        uses: kirinnee/atomici-action@v2.0.0
+        with:
+          binary_cache: kirinnee-sample-binary-cache
 
-      - name: Checkout Git
+      - name: Checkout Code
         uses: actions/checkout@v2.3.4
-
-      - name: Use Cachix
-        run: cachix use kirinnee-sample-binary-cache
 
       - name: Release
         env:
