@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/kirinnee/atomici-action/compare/v1.1.0...v1.2.0) (2021-08-08)
+
+### Features
+
+- nix-path ([4216300](https://github.com/kirinnee/atomici-action/commit/4216300fb097583d394de037597df5dbad7f31e0))
+
 ## [1.1.0](https://github.com/kirinnee/atomici-action/compare/v1.0.2...v1.1.0) (2021-08-08)
 
 ### Features
