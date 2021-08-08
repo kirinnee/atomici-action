@@ -9,15 +9,14 @@ jobs:
     name: Pre-Commit
     runs-on: ubuntu-20.04
     steps:
-      - name: Install Nix
-        uses: cachix/install-nix-action@v13
-        with:
-          nix_path: nixpkgs=channel:nixos-unstable
+      - name: AtomiCloud CI Environment
+        uses: kirinnee/atomici-action@v1.2.1
+
+      - name: Check Nix PATH
+        run: echo $NIX_PATH
 
       - name: Use Cachix
-        run: |
-          nix-env -i cachix -f '<nixpkgs>'
-          cachix use kirinnee-sample-binary-cache
+        run: cachix use kirinnee-sample-binary-cache
 
       - name: Checkout Code
         uses: actions/checkout@v2.3.4
