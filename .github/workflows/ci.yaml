@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: AtomiCloud CI Environment
         run: |
-          ./scripts/install-nix.sh
-          ./atomi.sh
+          scripts/install-nix.sh
+          scripts/atomi.sh
         env:
           INPUT_INSTALL_URL: ""
           INPUT_INSTALL_OPTIONS: ""
