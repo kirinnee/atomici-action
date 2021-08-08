@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: AtomiCloud CI Environment
-        uses: kirinnee/atomici-action@v1.2.1
+        run: |
+          ./scripts/install-nix.sh
+          ./atomi.sh
+        env:
+          INPUT_INSTALL_URL: ""
+          INPUT_INSTALL_OPTIONS: ""
+          INPUT_NIX_PATH: ""
+          INPUT_EXTRA_NIX_CONFIG: ""
 
       - name: Use Cachix
         run: cachix use kirinnee-sample-binary-cache
