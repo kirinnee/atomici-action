@@ -6,9 +6,11 @@ on:
 jobs:
   release:
     name: Release
-    container: ghcr.io/kirinnee/nix-ci/nix-ci:latest
     runs-on: ubuntu-20.04
     steps:
+      - name: AtomiCloud CI Environment
+        uses: kirinnee/atomici-action@v1.2.1
+
       - name: Checkout Git
         uses: actions/checkout@v2.3.4
 

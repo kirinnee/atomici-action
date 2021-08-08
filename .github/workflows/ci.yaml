@@ -8,8 +8,10 @@ jobs:
   precommit:
     name: Pre-Commit
     runs-on: ubuntu-20.04
-
     steps:
+      - name: AtomiCloud CI Environment
+        uses: kirinnee/atomici-action@v1.2.1
+
       - name: Use Cachix
         run: cachix use kirinnee-sample-binary-cache
 
