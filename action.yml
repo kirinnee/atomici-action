@@ -29,6 +29,6 @@ runs:
 
     - name: Use Binary Caches
       run: ${{ github.action_path }}/scripts/binary_cache.sh
+      shell: bash
       env:
         BINARY_CACHE: "${{ inputs.binary_cache }}"
-      shell: bash
