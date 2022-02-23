@@ -10,15 +10,6 @@ if type -p nix >/dev/null 2>&1; then
 	exit
 fi
 
-# Configure Nix
-add_config() {
-	echo "$1" | tee -a /tmp/nix.conf >/dev/null
-}
-# Set jobs to number of cores
-add_config "max-jobs = auto"
-# Allow binary caches for user
-add_config "trusted-users = root $USER"
-
 # Append extra nix configuration if provided
 [ "${INPUT_EXTRA_NIX_CONFIG}" != "" ] && add_config "$INPUT_EXTRA_NIX_CONFIG"
 
