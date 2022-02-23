@@ -1,3 +1,9 @@
+### [2.1.2](https://github.com/kirinnee/atomici-action/compare/v2.1.1...v2.1.2) (2022-02-23)
+
+### Bug Fixes
+
+- direnv cache commited causing crash on target machine ([6f37555](https://github.com/kirinnee/atomici-action/commit/6f375557f9526aa242983cede093d260722c81ae))
+
 ### [2.1.1](https://github.com/kirinnee/atomici-action/compare/v2.1.0...v2.1.1) (2022-02-23)
 
 ### Bug Fixes
