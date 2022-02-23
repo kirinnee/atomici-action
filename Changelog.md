@@ -1,3 +1,9 @@
+### [2.1.1](https://github.com/kirinnee/atomici-action/compare/v2.1.0...v2.1.1) (2022-02-23)
+
+### Bug Fixes
+
+- remove config alteration ([0cd0fde](https://github.com/kirinnee/atomici-action/commit/0cd0fde02c3d5872df599cdb3dfde2bb70cc90f1))
+
 ## [2.1.0](https://github.com/kirinnee/atomici-action/compare/v2.0.0...v2.1.0) (2021-08-08)
 
 ### Features
