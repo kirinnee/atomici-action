@@ -5,5 +5,5 @@ set -eu
 [ "${BINARY_CACHE}" = '' ] && exit 0
 
 for str in ${BINARY_CACHE}; do
-	cachix use "${str}"
+	sudo "$(which cachix)" use "${str}"
 done
