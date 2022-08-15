@@ -26,7 +26,9 @@ runs:
     - name: Install Dependent binaries with Nix
       run: ${{ github.action_path }}/scripts/atomi.sh
       shell: bash
-
+    - name: Add user as trusted user
+      run: ${{ github.action_path }}/scripts/include_trusted_user.sh
+      shell: bash
     - name: Use Binary Caches
       run: ${{ github.action_path }}/scripts/binary_cache.sh
       shell: bash

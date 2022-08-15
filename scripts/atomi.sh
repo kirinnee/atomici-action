@@ -26,5 +26,8 @@ install bash bash --version
 # install tar
 install tar gnutar --version
 
+# install tar
+install sed gnused --version
+
 # install cachix
 install cachix cachix --version
