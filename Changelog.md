@@ -1,3 +1,9 @@
+## [2.3.0](https://github.com/kirinnee/atomici-action/compare/v2.2.0...v2.3.0) (2022-08-15)
+
+### Features
+
+- adds current user as trusted user ([305e600](https://github.com/kirinnee/atomici-action/commit/305e6007b2980dbef3b49efd70f43728fefd6cfb))
+
 ## [2.2.0](https://github.com/kirinnee/atomici-action/compare/v2.1.2...v2.2.0) (2022-08-15)
 
 ### Features
