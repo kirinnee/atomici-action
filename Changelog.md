@@ -1,3 +1,9 @@
+## [2.3.1](https://github.com/kirinnee/atomici-action/compare/v2.3.0...v2.3.1) (2022-08-15)
+
+### Bug Fixes
+
+- **action:** using sudo unnecessarily for configuring binary cache ([e9ddab7](https://github.com/kirinnee/atomici-action/commit/e9ddab74aa2b1396381028b344abfa11ead55531))
+
 ## [2.3.0](https://github.com/kirinnee/atomici-action/compare/v2.2.0...v2.3.0) (2022-08-15)
 
 ### Features
