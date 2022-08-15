@@ -1,3 +1,9 @@
+## [2.2.0](https://github.com/kirinnee/atomici-action/compare/v2.1.2...v2.2.0) (2022-08-15)
+
+### Features
+
+- cachix use sudo ([8272a09](https://github.com/kirinnee/atomici-action/commit/8272a099ccd74d9ce1f1d6c5c7f28bd5473d2c0f))
+
 ### [2.1.2](https://github.com/kirinnee/atomici-action/compare/v2.1.1...v2.1.2) (2022-02-23)
 
 ### Bug Fixes
